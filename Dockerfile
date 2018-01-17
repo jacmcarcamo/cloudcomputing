@@ -6,7 +6,8 @@ WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 ADD . /app
-
+ENV http_proxy host:port
+ENV https_proxy host:port
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
